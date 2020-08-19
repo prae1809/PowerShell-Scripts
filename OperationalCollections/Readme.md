@@ -10,7 +10,6 @@ The collections are set to 7 days refresh period
 Collection list updated 2020-01-13 in bold.
 
 Full list :
-
 All Clients
 All Clients Active
 All Client Inactive
