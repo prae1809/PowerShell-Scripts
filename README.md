@@ -1,0 +1,1 @@
+The files contained in this Repo are linked with blog posts or a particular product. Please refer to the blog for full information. https://www.systemcenterdudes.com/blog or https://shop.systemcenterdudes.com
