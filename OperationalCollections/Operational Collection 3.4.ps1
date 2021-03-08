@@ -3,7 +3,7 @@
 # Website : www.SystemCenterDudes.com
 # Twitter : @scdudes
 #
-# Version : 3.4
+# Version : 3.5
 # Created : 2014/07/17
 # Modified : 
 # 2014/08/14 - Added Collection 34,35,36
@@ -42,6 +42,7 @@
 # 2019/04/04 - Add Collection 89-91
 # 2019/09/17 - Add Collection 92-94, Windows 2019, Updated Windows 2016
 # 2020/01/09 - Add Collection 95-100
+# 2021/03/08 - Add Collection 101-110. Add Windows 10 feature updates, Microsoft 365 Apps build, Microsoft 365 Apps update channels and client versions. Renamed Office 365 to Microsoft 365 Apps.
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -99,11 +100,11 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Clients Version | Not Latest (1910)"}},@{L="Query"
+; E={"Clients Version | Not Latest (2010)"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
- where SMS_R_System.ClientVersion not like '5.00.8913.100%'"}},@{L="LimitingCollection"
+ where SMS_R_System.ClientVersion not like '5.00.9040.%'"}},@{L="LimitingCollection"
 ; E={"Clients | All"}},@{L="Comment"
-; E={"All devices without SCCM client version 1910"}}
+; E={"All devices without SCCM client version 2010"}}
 
 $Collections +=
 $DummyObject |
@@ -791,37 +792,37 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1802"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1802"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.9029.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1802"}}
+; E={"Microsoft 365 Apps Build Version | 1802"}}
 
 ##Collection 79
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1803"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1803"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.9126.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1803"}}
+; E={"Microsoft 365 Apps Build Version | 1803"}}
 
 ##Collection 80
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1708"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1708"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.8431.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1708"}}
+; E={"Microsoft 365 Apps Build Version | 1708"}}
 
 ##Collection 81
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1705"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1705"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.8201.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1705"}}
+; E={"Microsoft 365 Apps Build Version | 1705"}}
 
 ##Collection 82
 $Collections +=
@@ -845,37 +846,37 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Channel | Monthly"}},@{L="Query"
+; E={"Microsoft 365 Apps Updates | Current Channel"}},@{L="Query"
 ; E={"select SMS_R_System.ResourceId, SMS_R_System.ResourceType, SMS_R_System.Name, SMS_R_System.SMSUniqueIdentifier, SMS_R_System.ResourceDomainORWorkgroup, SMS_R_System.Client from  SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.cfgUpdateChannel = 'http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Channel | Monthly"}}
+; E={"Microsoft 365 Apps Updates | Current Channel"}}
 
 ##Collection 85
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Channel | Monthly (Targeted)"}},@{L="Query"
+; E={"Microsoft 365 Apps Updates | Current Channel (Preview)"}},@{L="Query"
 ; E={"select SMS_R_System.ResourceId, SMS_R_System.ResourceType, SMS_R_System.Name, SMS_R_System.SMSUniqueIdentifier, SMS_R_System.ResourceDomainORWorkgroup, SMS_R_System.Client from  SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.cfgUpdateChannel = 'http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Channel | Monthly (Targeted)"}}
+; E={"Microsoft 365 Apps Updates | Current Channel (Preview)"}}
 
 ##Collection 86
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Channel | Semi-Annual (Targeted)"}},@{L="Query"
+; E={"Microsoft 365 Apps Updates | Semi-Annual Enterprise Channel (Preview)"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.cfgUpdateChannel = 'http://officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Channel | Semi-Annual (Targeted)"}}
+; E={"Microsoft 365 Apps Updates | Semi-Annual Enterprise Channel (Preview)"}}
 
 ##Collection 87
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Channel | Semi-Annual"}},@{L="Query"
+; E={"Microsoft 365 Apps Updates | Semi-Annual Enterprise Channel"}},@{L="Query"
 ; E={"select SMS_R_System.ResourceId, SMS_R_System.ResourceType, SMS_R_System.Name, SMS_R_System.SMSUniqueIdentifier, SMS_R_System.ResourceDomainORWorkgroup, SMS_R_System.Client from  SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.cfgUpdateChannel = 'http://officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Channel | Semi-Annual"}}
+; E={"Microsoft 365 Apps Updates | Semi-Annual Enterprise Channel"}}
 
 ##Collection 88
 $Collections +=
@@ -948,37 +949,37 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1808"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1808"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.10730.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1808"}}
+; E={"Microsoft 365 Apps Build Version | 1808"}}
 
 ##Collection 97
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1902"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1902"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.11328.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1902"}}
+; E={"Microsoft 365 Apps Build Version | 1902"}}
 
 ##Collection 98
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1908"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1908"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.11929.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1908"}}
+; E={"Microsoft 365 Apps Build Version | 1908"}}
 
 ##Collection 99
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Office 365 Build Version | 1912"}},@{L="Query"
+; E={"Microsoft 365 Apps Build Version | 1912"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.12325.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
-; E={"Office 365 Build Version | 1912"}}
+; E={"Microsoft 365 Apps Build Version | 1912"}}
 
 ##Collection 100
 $Collections +=
@@ -988,6 +989,99 @@ Select-Object @{L="Name"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.18363'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"Workstations | Windows 10 v1909"}}
+
+##Collection 101
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 10 v20H1"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.19041'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10 v20H1"}}
+
+##Collection 102
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 10 v20H2"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.19042'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10 v20H2"}}
+
+##Collection 103
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 10 v21H2"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.19043'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10 v21H2"}}
+
+##Collection 104
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Microsoft 365 Apps Build Version | 2002"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.12527.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Microsoft 365 Apps Build Version | 2002"}}
+
+##Collection 105
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Microsoft 365 Apps Build Version | 2008"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.13127.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Microsoft 365 Apps Build Version | 2008"}}
+
+##Collection 106
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2002"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.ClientVersion like '5.00.8968.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All systems with SCCM client version 2002 installed"}}
+
+##Collection 107
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2006"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.ClientVersion like '5.00.9012.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All systems with SCCM client version 2006 installed"}}
+
+##Collection 108
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2010"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.ClientVersion like '5.00.9040.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All systems with SCCM client version 2010 installed"}}
+
+##Collection 109
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Microsoft 365 Apps Updates | Beta Channel"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.cfgUpdateChannel = 'http://officecdn.microsoft.com/pr/5440fd1f-7ecb-4221-8110-145efaa6372f'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Microsoft 365 Apps Updates | Beta Channel"}}
+
+##Collection 110
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Microsoft 365 Apps Updates | Monthly Enterprise Channel"}},@{L="Query"
+; E={"select SMS_R_System.ResourceId, SMS_R_System.ResourceType, SMS_R_System.Name, SMS_R_System.SMSUniqueIdentifier, SMS_R_System.ResourceDomainORWorkgroup, SMS_R_System.Client from  SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceID = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.cfgUpdateChannel = 'http://officecdn.microsoft.com/pr/55336b82-a18d-4dd6-b5f6-9e5095c314a6'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Microsoft 365 Apps Updates | Monthly Enterprise Channel"}}
 
 #Check Existing Collections
 $Overwrite = 1
