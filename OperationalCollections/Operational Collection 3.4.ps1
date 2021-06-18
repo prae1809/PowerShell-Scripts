@@ -3,7 +3,7 @@
 # Website : www.SystemCenterDudes.com
 # Twitter : @scdudes
 #
-# Version : 3.4
+# Version : 3.5
 # Created : 2014/07/17
 # Modified : 
 # 2014/08/14 - Added Collection 34,35,36
@@ -42,6 +42,7 @@
 # 2019/04/04 - Add Collection 89-91
 # 2019/09/17 - Add Collection 92-94, Windows 2019, Updated Windows 2016
 # 2020/01/09 - Add Collection 95-100
+# 2021/06/18 - v3.5 Add Collection for client version 2103 and clients Not Approved
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -95,6 +96,15 @@ Select-Object @{L="Name"
  where SMS_R_System.Client = 0 OR SMS_R_System.Client is NULL"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"All devices without SCCM client installed"}}
+
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients | Not Approved"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System  inner join SMS_CM_RES_COLL_SMS00001 on SMS_CM_RES_COLL_SMS00001.ResourceId = SMS_R_System.ResourceId
+ where SMS_R_System.Client = 1 and SMS_CM_RES_COLL_SMS00001.IsApproved = 0"}},@{L="LimitingCollection"
+; E={"All Desktop and Server Clients"}},@{L="Comment"
+; E={"All client devices not approved"}}
 
 $Collections +=
 $DummyObject |
@@ -257,6 +267,15 @@ Select-Object @{L="Name"
  where SMS_R_System.ClientVersion like '5.00.8577.100%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"All systems with SCCM client version 1710 installed"}}
+
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2103"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.ClientVersion like '5.00.9049.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"All systems with SCCM client version 2103 installed"}}
 
 $Collections +=
 $DummyObject |
