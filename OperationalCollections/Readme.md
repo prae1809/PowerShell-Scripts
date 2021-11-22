@@ -10,12 +10,12 @@ The collections are set to 7 days refresh period
 Collection list updated 2020-01-13 in bold.
 
 Full list :
-All Clients
-All Clients Active
-All Client Inactive
-All Clients Online
+-All Clients
+-All Clients Active
+-All Client Inactive
+-All Clients Online
 All Clients R2 CU0
-All Clients R2 CU1
+-All Clients R2 CU1
 All Clients R2 CU2
 All Clients R2 CU3
 All Clients R2 CU4
