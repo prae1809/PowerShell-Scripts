@@ -72,7 +72,7 @@ Full list :
 - All Workstations Windows 8
 - All Workstations Windows 8.1
 - All Workstations Windows 10
-*- All Workstations Windows 11
+- All Workstations Windows 11
 - All Workstations Windows XP
 - All Windows Update Agent Version Outdated
 - Mobile Devices - All Android
@@ -110,12 +110,33 @@ Full list :
 - Office 365 Build Version | 1902
 - Office 365 Build Version | 1908
 - Office 365 Build Version | 1912
+- Office 365 Build Version | 2001
+- Office 365 Build Version | 2002
+- Office 365 Build Version | 2003
+- Office 365 Build Version | 2004
+- Office 365 Build Version | 2005
+- Office 365 Build Version | 2006
+- Office 365 Build Version | 2007
+- Office 365 Build Version | 2008
+- Office 365 Build Version | 2009
+- Office 365 Build Version | 2010
+- Office 365 Build Version | 2011
+- Office 365 Build Version | 2012
+- Office 365 Build Version | 2101
+- Office 365 Build Version | 2102
+- Office 365 Build Version | 2103
+- Office 365 Build Version | 2104
+- Office 365 Build Version | 2105
+- Office 365 Build Version | 2106
+- Office 365 Build Version | 2107
+- Office 365 Build Version | 2108
+- Office 365 Build Version | 2109
+- Office 365 Build Version | 2110
 - Office 365 Channel | Monthly
 - Office 365 Channel | Monthly (Targeted)
 - Office 365 Channel | Semi-Annual
 - Office 365 Channel | Semi-Annual (Targeted)
 - All systems having a duplicate device record
-
 
 Note : The collection name must be unique in SCCM so if you already have a collection with the same name, the script will give an error on this particular collection but will continue to process other collections.
 
