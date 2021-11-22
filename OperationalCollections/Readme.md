@@ -38,6 +38,11 @@ Full list :
 - All Client 1902
 - All Client 1906
 - All Client 1910
+- All Client 2002
+- All Client 2006
+- All Client 2010
+- All Client 2103
+- All Client 2107
 - All Clients Not Reporting HW Inv since 14 days
 - All Clients Not Reporting SW Inv since 30 days
 - All Clients X86
@@ -67,6 +72,7 @@ Full list :
 - All Workstations Windows 8
 - All Workstations Windows 8.1
 - All Workstations Windows 10
+*- All Workstations Windows 11
 - All Workstations Windows XP
 - All Windows Update Agent Version Outdated
 - Mobile Devices - All Android
