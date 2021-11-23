@@ -1,13 +1,13 @@
 This script will create a set of 100 SCCM collections for your various needs. These collections can be used for operational tasks afterward.
 
-New in V3.4
+New in V3.5
 
 If you already ran an older version of this script, the script will handle already created collections by removing them and recreate them.
 Features :
 
 The collections will be placed in an "Operational" folder
 The collections are set to 7 days refresh period
-Collection list updated 2020-01-13 in bold.
+Collection list updated 2021-11-22 in bold.
 
 Full list :
 - All Clients
