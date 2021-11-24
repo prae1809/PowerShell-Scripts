@@ -1,6 +1,6 @@
 This script will create a set of 134 SCCM collections for your various needs. These collections can be used for operational tasks afterward.
 
-New in V3.5
+Blog Post with all details : https://systemcenterdudes.com/create-operational-sccm-collection-using-powershell-script/
 
 If you already ran an older version of this script, the script will handle already created collections by removing them and recreate them.
 
@@ -139,8 +139,7 @@ Full list :
 - Office 365 Channel | Semi-Annual (Targeted)
 - All systems having a duplicate device record
 
-Note : The collection name must be unique in SCCM so if you already have a collection with the same name, the script will give an error on this particular collection but will continue to process other collections.
 
 Tip : You can comment out any collections that you don't want using (#) at the begging of the "New/Add-CMCollection" lines in the "Create Collection" Section.
 
-For more details, you can refer to this link.
+For more details, you can refer to the blog post link : https://systemcenterdudes.com/create-operational-sccm-collection-using-powershell-script/
