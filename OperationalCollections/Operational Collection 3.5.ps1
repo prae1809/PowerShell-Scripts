@@ -100,9 +100,9 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Clients Version | Not Latest (1910)"}},@{L="Query"
+; E={"Clients Version | Not Latest (2107)"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
- where SMS_R_System.ClientVersion not like '5.00.8913.100%'"}},@{L="LimitingCollection"
+ where SMS_R_System.ClientVersion not like '5.00.9058.10%'"}},@{L="LimitingCollection"
 ; E={"Clients | All"}},@{L="Comment"
 ; E={"All devices without SCCM client version 1910"}}
 
