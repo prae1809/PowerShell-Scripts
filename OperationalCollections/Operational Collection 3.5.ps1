@@ -100,11 +100,11 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Clients Version | Not Latest (1910)"}},@{L="Query"
+; E={"Clients Version | Not Latest (2107)"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
- where SMS_R_System.ClientVersion not like '5.00.8913.100%'"}},@{L="LimitingCollection"
+ where SMS_R_System.ClientVersion not like '5.00.9058.10%'"}},@{L="LimitingCollection"
 ; E={"Clients | All"}},@{L="Comment"
-; E={"All devices without SCCM client version 1910"}}
+; E={"All devices without SCCM client version 2107"}}
 
 $Collections +=
 $DummyObject |
@@ -758,7 +758,7 @@ Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 Support State - Current"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
  LEFT OUTER JOIN SMS_WindowsServicingStates ON SMS_WindowsServicingStates.Build = SMS_R_System.build01 AND SMS_WindowsServicingStates.branch = SMS_R_System.osbranch01 where SMS_WindowsServicingStates.State = '2'"}},@{L="LimitingCollection"
-; E={"Workstations | All"}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Windows 10 Support State - Current"}}
 
 $Collections +=
@@ -767,7 +767,7 @@ Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 Support State - Expired Soon"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
  LEFT OUTER JOIN SMS_WindowsServicingStates ON SMS_WindowsServicingStates.Build = SMS_R_System.build01 AND SMS_WindowsServicingStates.branch = SMS_R_System.osbranch01 where SMS_WindowsServicingStates.State = '3'"}},@{L="LimitingCollection"
-; E={"Workstations | All"}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Windows 10 Support State - Expired Soon"}}
 
 $Collections +=
@@ -776,7 +776,7 @@ Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 Support State - Expired"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
  LEFT OUTER JOIN SMS_WindowsServicingStates ON SMS_WindowsServicingStates.Build = SMS_R_System.build01 AND SMS_WindowsServicingStates.branch = SMS_R_System.osbranch01 where SMS_WindowsServicingStates.State = '4'"}},@{L="LimitingCollection"
-; E={"Workstations | All"}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Windows 10 Support State - Expired"}}
 
 ##Collection 77
@@ -839,7 +839,7 @@ $DummyObject |
 Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 v1803"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.17134'"}},@{L="LimitingCollection"
-; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Workstations | Windows 10 v1803"}}
 
 ##Collection 84
@@ -925,7 +925,7 @@ $DummyObject |
 Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 v1809"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.17763'"}},@{L="LimitingCollection"
-; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Workstations | Windows 10 v1809"}}
 
 ##Collection 94
@@ -934,7 +934,7 @@ $DummyObject |
 Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 v1903"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.18362'"}},@{L="LimitingCollection"
-; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Workstations | Windows 10 v1903"}}
 
 ##Collection 95
@@ -987,7 +987,7 @@ $DummyObject |
 Select-Object @{L="Name"
 ; E={"Workstations | Windows 10 v1909"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.Build = '10.0.18363'"}},@{L="LimitingCollection"
-; E={$LimitingCollection}},@{L="Comment"
+; E={"Workstations | Windows 10"}},@{L="Comment"
 ; E={"Workstations | Windows 10 v1909"}}
 
 
