@@ -5,9 +5,9 @@ New in V3.5
 If you already ran an older version of this script, the script will handle already created collections by removing them and recreate them.
 
 Features :
-Handle collection that were created by a previous version of the script
-The collections will be placed in an "Operational" folder
-The collections are set to 7 days refresh period
+- Handle collection that were created by a previous version of the script
+- The collections will be placed in an "Operational" folder
+- The collections are set to 7 days refresh period
 
 
 Full list :
