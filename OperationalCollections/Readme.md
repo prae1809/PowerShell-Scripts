@@ -1,4 +1,4 @@
-This script will create a set of 134 SCCM collections for your various needs. These collections can be used for operational tasks afterward.
+This script will create a set of 148 SCCM collections for your various needs. These collections can be used for operational tasks afterward.
 
 Blog Post with all details : https://systemcenterdudes.com/create-operational-sccm-collection-using-powershell-script/
 
