@@ -3,7 +3,7 @@
 # Website : www.SystemCenterDudes.com
 # Twitter : @scdudes
 #
-# Version : 3.5
+# Version : 3.6
 # Created : 2014/07/17
 # Modified : 
 # 2014/08/14 - Added Collection 34,35,36
@@ -43,6 +43,7 @@
 # 2019/09/17 - Add Collection 92-94, Windows 2019, Updated Windows 2016
 # 2020/01/09 - Add Collection 95-100
 # 2021/11/22 - Add Collection 100-133
+# 2022/08/24 - Add Collection 133-148
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -100,11 +101,11 @@ Select-Object @{L="Name"
 $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
-; E={"Clients Version | Not Latest (2107)"}},@{L="Query"
+; E={"Clients Version | Not Latest (2207)"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
- where SMS_R_System.ClientVersion not like '5.00.9058.10%'"}},@{L="LimitingCollection"
+ where SMS_R_System.ClientVersion not like '5.00.9088.10%'"}},@{L="LimitingCollection"
 ; E={"Clients | All"}},@{L="Comment"
-; E={"All devices without SCCM client version 2107"}}
+; E={"All devices without SCCM client version 2207"}}
 
 $Collections +=
 $DummyObject |
@@ -1290,6 +1291,139 @@ Select-Object @{L="Name"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.14527.%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"
 ; E={"Office 365 Build Version | 2110"}}
+
+################################# August 24th 2022 ###############################
+
+##Collection 134
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2111"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.14701.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2111"}}
+
+##Collection 135
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2112"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.14729.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2112"}}
+
+##Collection 136
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2201"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.14827.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2201"}}
+
+##Collection 137
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2202"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.14931.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2202"}}
+
+##Collection 138
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2203"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.15028.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2203"}}
+
+##Collection 139
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2204"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.15128.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2204"}}
+
+##Collection 140
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2205"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.15225.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2205"}}
+
+##Collection 141
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2206"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.15330.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2206"}}
+
+##Collection 142
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Office 365 Build Version | 2207"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System inner join SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS on SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.ResourceId = SMS_R_System.ResourceId where SMS_G_System_OFFICE365PROPLUSCONFIGURATIONS.VersionToReport like '16.0.15427.%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"
+; E={"Office 365 Build Version | 2207"}}
+
+##Collection 143
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2111"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9068.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2111 installed"}}
+
+##Collection 144
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2203"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9078.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2203 installed"}}
+
+##Collection 145
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2207"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9088.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2207 installed"}}
+
+##Collection 146
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Co-Management Enabled"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID, SMS_R_SYSTEM.ResourceType, SMS_R_SYSTEM.Name, SMS_R_SYSTEM.SMSUniqueIdentifier, SMS_R_SYSTEM.ResourceDomainORWorkgroup, SMS_R_SYSTEM.Client from SMS_R_System
+inner join SMS_Client_ComanagementState on SMS_Client_ComanagementState.ResourceId = SMS_R_System.ResourceId where SMS_Client_ComanagementState.ComgmtPolicyPresent = 1 AND SMS_Client_ComanagementState.MDMEnrolled = 1 AND MDMProvisioned = 1"}},@{L="LimitingCollection"
+; E={"Workstations | All"}},@{L="Comment"; E={"All workstations with SCCM client with Co-Management Enabled"}}
+
+##Collection 147
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Defender ATP Onboarded"}},@{L="Query"
+; E={"select *  from  SMS_R_System inner join SMS_G_System_AdvancedThreatProtectionHealthStatus on SMS_G_System_AdvancedThreatProtectionHealthStatus.ResourceId = SMS_R_System.ResourceId where SMS_G_System_AdvancedThreatProtectionHealthStatus.OnboardingState = 1"}},@{L="LimitingCollection"
+; E={"Workstations | All"}},@{L="Comment"; E={"All workstations with SCCM client with Defender ATP Onboarded"}}
+
+##Collection 148
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Defender ATP Not Onboarded"}},@{L="Query"
+; E={"select *  from  SMS_R_System inner join SMS_G_System_AdvancedThreatProtectionHealthStatus on SMS_G_System_AdvancedThreatProtectionHealthStatus.ResourceId = SMS_R_System.ResourceId where SMS_G_System_AdvancedThreatProtectionHealthStatus.OnboardingState = 0"}},@{L="LimitingCollection"
+; E={"Workstations | All"}},@{L="Comment"; E={"All workstations with SCCM client with Defender ATP Not Onboarded"}}
+
 
 #Check Existing Collections
 $Overwrite = 1
