@@ -3,7 +3,7 @@
 # Website : www.SystemCenterDudes.com
 # Twitter : @scdudes
 #
-# Version : 3.6
+# Version : 3.7
 # Created : 2014/07/17
 # Modified : 
 # 2014/08/14 - Added Collection 34,35,36
@@ -44,7 +44,8 @@
 # 2020/01/09 - Add Collection 95-100
 # 2021/11/22 - Add Collection 100-133
 # 2022/08/24 - Add Collection 133-148
-#            
+# 2023/02/03 - Add Collection 149, clients Not Approved
+#
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
 #
@@ -1423,6 +1424,16 @@ Select-Object @{L="Name"
 ; E={"Workstations | Defender ATP Not Onboarded"}},@{L="Query"
 ; E={"select *  from  SMS_R_System inner join SMS_G_System_AdvancedThreatProtectionHealthStatus on SMS_G_System_AdvancedThreatProtectionHealthStatus.ResourceId = SMS_R_System.ResourceId where SMS_G_System_AdvancedThreatProtectionHealthStatus.OnboardingState = 0"}},@{L="LimitingCollection"
 ; E={"Workstations | All"}},@{L="Comment"; E={"All workstations with SCCM client with Defender ATP Not Onboarded"}}
+
+##Collection 149
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients | Not Approved"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System  inner join SMS_CM_RES_COLL_SMS00001 on SMS_CM_RES_COLL_SMS00001.ResourceId = SMS_R_System.ResourceId where SMS_R_System.Client = 1 and SMS_CM_RES_COLL_SMS00001.IsApproved = 0"}},@{L="LimitingCollection"
+; E={"All Desktop and Server Clients"}},@{L="Comment"
+; E={"All client devices not approved"}}
+
 
 
 #Check Existing Collections
