@@ -3,7 +3,7 @@
 # Website : www.SystemCenterDudes.com
 # Twitter : @scdudes
 #
-# Version : 3.6
+# Version : 3.7
 # Created : 2014/07/17
 # Modified : 
 # 2014/08/14 - Added Collection 34,35,36
@@ -44,7 +44,7 @@
 # 2020/01/09 - Add Collection 95-100
 # 2021/11/22 - Add Collection 100-133
 # 2022/08/24 - Add Collection 133-148
-# 2024/11/07 - Add Collection 148
+# 2024/11/07 - Add Collection 149+
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
