@@ -1,4 +1,4 @@
-This script will create a set of 148 SCCM collections for your various needs. These collections can be used for operational tasks afterward.
+This script will create a set of 155 SCCM collections for your various needs. These collections can be used for operational tasks afterward.
 
 Blog Post with all details : https://systemcenterdudes.com/create-operational-sccm-collection-using-powershell-script/
 
@@ -56,6 +56,9 @@ Full list :
 - All Client 2111
 - All Client 2203
 - All Client 2207
+- All Client 2303
+- All Client 2307
+- All Client 2403
 - All Clients Not Reporting HW Inv since 14 days
 - All Clients Not Reporting SW Inv since 30 days
 - All Clients X86
@@ -111,8 +114,12 @@ Full list :
 - Workstations | Windows 10 v20H2
 - Workstations | Windows 10 v21H1
 - Workstations | Windows 10 v21H2
+- Workstations | Windows 10 v22H2
 - Workstations | Windows 11
 - Workstations | Windows 11 v21H2
+- Workstations | Windows 11 v22H2
+- Workstations | Windows 11 v23H2
+- Workstations | Windows 11 v24H2
 - Workstations | Windows 10 Current Branch (CB)
 - Workstations | Windows 10 Current Branch for Business (CBB)
 - Workstations | Windows 10 Long Term Servicing Branch (LTSB)
