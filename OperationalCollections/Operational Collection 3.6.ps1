@@ -44,7 +44,7 @@
 # 2020/01/09 - Add Collection 95-100
 # 2021/11/22 - Add Collection 100-133
 # 2022/08/24 - Add Collection 133-148
-# 2024/11/07 - Add Collection 149+
+# 2024/11/07 - Add Collection 149-155
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -1448,6 +1448,46 @@ Select-Object @{L="Name"
 ; E={"Clients Version | 2403"}},@{L="Query"
 ; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9128.10%'"}},@{L="LimitingCollection"
 ; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2403 installed"}}
+
+##Collection 152
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 10 v22H2"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.Build = '10.0.19045'"}},@{L="LimitingCollection"
+; E={"Workstations | Windows 10"}},@{L="Comment"
+; E={"All workstations with Windows 10 operating system v22H2"}}
+
+##Collection 153
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 11 v22H2"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.Build = '10.0.22621'"}},@{L="LimitingCollection"
+; E={"Workstations | Windows 11"}},@{L="Comment"
+; E={"All workstations with Windows 11 operating system v22H2"}}
+
+##Collection 154
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 11 v23H2"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.Build = '10.0.22631'"}},@{L="LimitingCollection"
+; E={"Workstations | Windows 11"}},@{L="Comment"
+; E={"All workstations with Windows 11 operating system v23H2"}}
+
+##Collection 155
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Workstations | Windows 11 v24H2"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+ where SMS_R_System.Build = '10.0.26100'"}},@{L="LimitingCollection"
+; E={"Workstations | Windows 11"}},@{L="Comment"
+; E={"All workstations with Windows 11 operating system v24H2"}}
 
 
 #Check Existing Collections
