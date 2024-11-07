@@ -44,6 +44,7 @@
 # 2020/01/09 - Add Collection 95-100
 # 2021/11/22 - Add Collection 100-133
 # 2022/08/24 - Add Collection 133-148
+# 2024/11/07 - Add Collection 148
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -1423,6 +1424,30 @@ Select-Object @{L="Name"
 ; E={"Workstations | Defender ATP Not Onboarded"}},@{L="Query"
 ; E={"select *  from  SMS_R_System inner join SMS_G_System_AdvancedThreatProtectionHealthStatus on SMS_G_System_AdvancedThreatProtectionHealthStatus.ResourceId = SMS_R_System.ResourceId where SMS_G_System_AdvancedThreatProtectionHealthStatus.OnboardingState = 0"}},@{L="LimitingCollection"
 ; E={"Workstations | All"}},@{L="Comment"; E={"All workstations with SCCM client with Defender ATP Not Onboarded"}}
+
+##Collection 149
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2303"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9106.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2303 installed"}}
+
+##Collection 150
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2309"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9120.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2309 installed"}}
+
+##Collection 151
+$Collections +=
+$DummyObject |
+Select-Object @{L="Name"
+; E={"Clients Version | 2403"}},@{L="Query"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ClientVersion like '5.00.9128.10%'"}},@{L="LimitingCollection"
+; E={$LimitingCollection}},@{L="Comment"; E={"All systems with SCCM client version 2403 installed"}}
 
 
 #Check Existing Collections
