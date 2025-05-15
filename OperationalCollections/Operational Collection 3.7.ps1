@@ -677,8 +677,8 @@ $Collections +=
 $DummyObject |
 Select-Object @{L="Name"
 ; E={"Workstations | Windows 10"}},@{L="Query"
-; E={"select SMS_R_System.ResourceID,SMS_R_System.ResourceType,SMS_R_System.Name,SMS_R_System.SMSUniqueIdentifier,SMS_R_System.ResourceDomainORWorkgroup,SMS_R_System.Client from SMS_R_System
- where OperatingSystemNameandVersion like '%Workstation 10.0%'"}},@{L="LimitingCollection"
+; E={"select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System
+where SMS_R_System.Build > '10.0.10239' and SMS_R_System.Build < '10.0.19046'"}},@{L="LimitingCollection"
 ; E={"Workstations | All"}},@{L="Comment"
 ; E={"All workstations with Windows 10 operating system"}}
 
